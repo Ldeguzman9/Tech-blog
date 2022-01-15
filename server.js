@@ -1,39 +1,45 @@
+// dependencies
 const express = require("express");
-const routes = require("./controllers/");
-const exphbs = require("express-handlebars");
-const session = require("express-session");
 const path = require("path");
-// import sequelize connection
-const sequelize = require("./config/connection");
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const exphbs = require("express-handlebars");
+
+const sequelize = require("./config/config");
+const routes = require("./controllers");
+const helpers = require("./utils/helpers");
+const hbs = exphbs.create({ helpers });
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const PORT = process.env.PORT || 3002;
+
+// enable session and expires after 5 minutes with maxAge
 const sess = {
-  secret: "Super secret secret",
-  cookie: {},
+  secret: "dovahkiin",
+  cookie: { maxAge: 300000 },
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: new SequelizeStore({
     db: sequelize,
   }),
 };
 
-app.use(session(sess));
-const hbs = exphbs.create({ helpers });
+// middleware from express
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+
+// set handlebars as view model
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// session middleware
+app.use(session(sess));
 
+// turn on routes
 app.use(routes);
 
-// sync sequelize models to the database, then turn on the server
+// connect the db and server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () =>
-    console.log(
-      `\n -------------------- App listening on port ${PORT}! --------------------`
-    )
-  );
+  app.listen(PORT, () => console.log(" Now listening on Port 3002! "));
 });
