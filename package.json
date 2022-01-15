@@ -14,5 +14,22 @@
   },
   "devDependencies": {
     "jest": "^27.4.7"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "tech-blog",
+  "description": "# User Story",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ldeguzman9/Tech-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ldeguzman9/Tech-blog/issues"
+  },
+  "homepage": "https://github.com/Ldeguzman9/Tech-blog#readme"
 }
