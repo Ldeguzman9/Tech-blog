@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
     const postData = await Post.findAll({
       include: [User],
     });
-    console.log("line 10");
+
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render("all-posts", { posts });
