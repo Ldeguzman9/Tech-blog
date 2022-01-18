@@ -1,5 +1,7 @@
 # Tech-blog
 
+This application allows users to signup and create a login for a blog. In the blog dashboard users are able to create/edit blog posts.
+
 # User Story
 
 - AS A developer who writes about tech
@@ -41,3 +43,27 @@
 - THEN I am signed out of the site
 - WHEN I am idle on the site for more than a set time
 - THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
+
+# Tech-blog Features:
+
+1. Ability to create a username and hashed password.
+2. Ability to create new posts and edit old posts
+3. Ability to comment on existing posts
+4. Ability to logout of the application
+
+# Tech-blog Screen Shots
+
+- **Insomnia Test**
+  ![Insomnia Test](https://github.com/Ldeguzman9/E-commerce-Back-End/blob/main/assets/images/Screenshot%202022-01-09%20at%207.19.05%20PM.png?raw=true)
+
+# Technical Skills
+
+- MySQL
+- Node
+- Express
+- Sequelize
+- Dotenv
+
+# License
+
+- MIT
