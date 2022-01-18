@@ -53,8 +53,11 @@ This application allows users to signup and create a login for a blog. In the bl
 
 # Tech-blog Screen Shots
 
-- **Insomnia Test**
-  ![Insomnia Test](https://github.com/Ldeguzman9/E-commerce-Back-End/blob/main/assets/images/Screenshot%202022-01-09%20at%207.19.05%20PM.png?raw=true)
+- **Blog Posts**
+  ![Dashboard](https://github.com/Ldeguzman9/Tech-blog/blob/main/assets/images/Screenshot%202022-01-17%20at%208.25.15%20PM.png?raw=true)
+
+- **Blog Posts**
+  ![Blog Posts](https://github.com/Ldeguzman9/Tech-blog/blob/main/assets/images/Screenshot%202022-01-17%20at%208.25.05%20PM.png?raw=true)
 
 # Technical Skills
 
