@@ -27,7 +27,7 @@ const sess = {
 // middleware from express
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 // set handlebars as view model
 app.engine("handlebars", hbs.engine);
